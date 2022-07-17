@@ -5,6 +5,9 @@ if BOARD_MYTOM_V1_LEFT
     config ZMK_KEYBOARD_NAME 
 	default "Mytom Left v1"
 
+config ZMK_SPLIT_ROLE_CENTRAL
+	default y
+	
 if ZMK_DISPLAY
 
 config I2C
@@ -49,6 +52,9 @@ if BOARD_MYTOM_V1_LEFT || BOARD_MYTOM_V1_RIGHT
 
 config BOARD
 	default "Mytom"
+
+config ZMK_SPLIT
+	default y
 
 if USB
 
