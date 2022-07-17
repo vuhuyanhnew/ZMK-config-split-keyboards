@@ -86,5 +86,5 @@ jobs:
       - name: Archive (${{ steps.variables.outputs.display-name }})
         uses: actions/upload-artifact@v2
         with:
-          name: ${{ steps.variables.outputs.display-name }} firmware
+          name: firmware
           path: build/artifacts
