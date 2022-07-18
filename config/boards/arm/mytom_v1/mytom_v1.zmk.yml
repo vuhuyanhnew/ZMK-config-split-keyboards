@@ -1,0 +1,13 @@
+file_format: "1"
+id: mytom_v1
+name: Mytom Rev1 Board
+type: board
+arch: arm
+features:
+  - keys
+  - display
+  - underglow
+outputs:
+  - usb
+  - ble
+url: none

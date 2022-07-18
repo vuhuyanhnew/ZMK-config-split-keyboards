@@ -1,19 +1,15 @@
-identifier: Mytom_v1
-name: Mytom_v1
-type: keyboard
+identifier: mytom_v1
+name: Mytom Rev1 Board
+type: mcu
 arch: arm
 toolchain:
   - zephyr
   - gnuarmemb
   - xtools
 supported:
-  - gpio
-  - i2c
-  - counter
-  - spi
+  - adc
   - usb_device
-  - nvs
-  - can
-  - kscan
   - ble
-  - pwm
+  - RGB
+  - ieee802154
+  - watchdog

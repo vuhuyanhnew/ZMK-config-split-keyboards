@@ -1,42 +1,59 @@
-#
-# Copyright (c) 2021 Polarity Works
+# Copyright (c) 2021 The ZMK Contributors
 # SPDX-License-Identifier: MIT
-#
 
 if BOARD_MYTOM_V1_LEFT
+    config ZMK_KEYBOARD_NAME 
+	default "Mytom Left v1"
 
-	config ZMK_KEYBOARD_NAME
-	default "Mytom v1 Left"
+config ZMK_SPLIT_ROLE_CENTRAL
+	default y
+	
+if ZMK_DISPLAY
 
-endif # BOARD_ADV360_LEFT
+config I2C
+	default y
+
+config SSD1306
+	default y
+
+config SSD1306_REVERSE_MODE
+	default y
+
+config LVGL_HOR_RES_MAX
+	default 128
+
+config LVGL_VER_RES_MAX
+	default 64
+
+config LVGL_VDB_SIZE
+	default 64
+
+config LVGL_DPI
+	default 148
+
+config LVGL_BITS_PER_PIXEL
+	default 1
+
+choice LVGL_COLOR_DEPTH
+	default LVGL_COLOR_DEPTH_1
+endchoice
+
+endif # ZMK_DISPLAY
+
+endif #BOARD_MYTOM_V1_LEFT
 
 if BOARD_MYTOM_V1_RIGHT
-
-	config ZMK_KEYBOARD_NAME
-	default "Mytom v1 Right"
-
-endif # BOARD_ADV360_RIGHT
+    config ZMK_KEYBOARD_NAME
+	default "Mytom Right v1"
+endif #BOARD_MYTOM_V1_RIGHT
 
 
 if BOARD_MYTOM_V1_LEFT || BOARD_MYTOM_V1_RIGHT
 
 config BOARD
-	default "mytom_v1"
+	default "Mytom"
 
 config ZMK_SPLIT
-	default y
-
-config SPI
-    bool
-    default y
-
-config BT_CTLR
-	default BT
-
-config ZMK_BLE
-	default y
-
-config ZMK_USB
 	default y
 
 if USB
@@ -49,12 +66,16 @@ config USB_DEVICE_STACK
 
 endif # USB
 
+config BT_CTLR
+	default BT
+
+config ZMK_BLE
+	default y
+
+config ZMK_USB
+	default y
+
 config ZMK_BATTERY_VOLTAGE_DIVIDER
 	default y
 
-config SPI
-	default y
-
-
-
-endif # BOARD_ADV360_LEFT || BOARD_ADV360_RIGHT
+endif 
