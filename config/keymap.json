@@ -1,6 +1,6 @@
 {
   "keyboard": "mytom_v1",
-  "keymap": "",
+  "keymap": "Default",
   "layout": "",
   "layer_names": [
     "default_layer",
