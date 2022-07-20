@@ -7,7 +7,7 @@ manifest:
     - name: zmkfirmware-infused-kim
       url-base: https://github.com/infused-kim
     - name: zmkfirmware-split-battery-report
-      url-base: https://github.com/Katona/zmk/
+      url-base: https://github.com/Katona/
   projects:
     - name: zmk
       #remote: zmkfirmware
