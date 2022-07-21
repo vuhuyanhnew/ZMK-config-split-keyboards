@@ -16,5 +16,7 @@
 include:
   - board: mytom_v1_left
   - board: mytom_v1_right
-  - board: nice_nano_v2
+  - board: mytom_v1_left
+    shield: settings_reset
+  - board: mytom_v1_right
     shield: settings_reset
