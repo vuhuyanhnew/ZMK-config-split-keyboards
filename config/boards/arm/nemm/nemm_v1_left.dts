@@ -1,0 +1,120 @@
+/*
+ * Copyright (c) 2020 Eric Lau
+ *
+ * SPDX-License-Identifier: MIT
+ */
+
+#include "nemm_v1.dts"
+
+    / {
+        chosen {
+            zmk,underglow = &led_strip;
+            zmk,battery = &vbatt;
+        };
+    
+        kscan0: kscan_0 {
+            compatible = "zmk,kscan-gpio-matrix";
+            label = "KSCAN";
+            diode-direction = "col2row";
+    
+            col-gpios
+                = <&gpio0 25 GPIO_ACTIVE_HIGH>
+                , <&gpio0 24 GPIO_ACTIVE_HIGH>
+                , <&gpio0 22 GPIO_ACTIVE_HIGH>
+                , <&gpio0 20 GPIO_ACTIVE_HIGH> //
+                , <&gpio0 23 GPIO_ACTIVE_HIGH> //
+                , <&gpio0 21 GPIO_ACTIVE_HIGH> //
+                , <&gpio0 17 GPIO_ACTIVE_HIGH> //
+                , <&gpio0 15 GPIO_ACTIVE_HIGH> //
+                , <&gpio0 13 GPIO_ACTIVE_HIGH> //
+                ;
+    
+            row-gpios
+                = <&gpio0 27 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+                , <&gpio1 0  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+                , <&gpio0 2  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+                , <&gpio0 29 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> //
+                , <&gpio0 28 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+                , <&gpio0 30 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+                ;
+        };
+    
+        ext-power {
+            compatible = "zmk,ext-power-generic";
+            label = "EXT_POWER";
+            control-gpios = <&gpio0 8 GPIO_ACTIVE_LOW>;   /*0.07*/
+        };
+    
+        vbatt: vbatt {
+            compatible = "zmk,battery-voltage-divider";
+            label = "VBATT";
+            io-channels = <&adc 0>;
+            output-ohms = <2000000>;
+            full-ohms = <(2000000 + 820000)>;
+        };
+    };
+    
+    &spi0 {
+        status = "okay";
+    
+        sck-pin  = <6>;    /* SCK */
+        mosi-pin = <40>;   /* MOSI */
+        miso-pin = <14>;   /* MISO */ 
+        cs-gpios = <&gpio0 11 GPIO_ACTIVE_LOW>;  /* CS */
+    
+        st7789v: st7789v@0 {
+            compatible = "sitronix,st7789v";
+            label = "DISPLAY";
+            spi-max-frequency = <20000000>;
+            reg = <0>;
+    
+            cmd-data-gpios = <&gpio0 4 GPIO_ACTIVE_LOW>;     /*  DC   */
+            reset-gpios    = <&gpio0 26 GPIO_ACTIVE_LOW>;    /* RESET */
+    
+            width = <320>;
+            height = <170>;
+            x-offset = <0>;
+            y-offset = <35>;
+            vcom = <0x2b>;
+            gctrl = <0x35>;
+            vrhs = <0x0f>;
+            vdvs = <0x20>;
+            mdac = <0x60>;
+            gamma = <0x01>;
+            colmod = <0x55>;
+            lcm = <0x2c>;
+            porch-param = [0c 0c 00 33 33];
+            cmd2en-param = [5a 69 02 01];
+            pwctrl1-param = [52 a1];
+            pvgam-param = [D0 00 02 07 0B 1A 31 54 40 29 12 12 12 17];
+            nvgam-param = [D0 00 02 07 05 15 2D 44 44 1C 18 16 1C 1D];
+            ram-param = [00 F8];
+            rgb-param = [CD 08 14];
+            
+        };
+     };
+    
+    &spi1 {
+        status = "okay";
+    
+        mosi-pin = <19>;
+        // Unused pins, needed for SPI definition, but not used by the ws2812 driver itself.
+        sck-pin = <16>;
+        miso-pin = <14>;
+    
+        led_strip: ws2812@0 {
+            compatible = "worldsemi,ws2812-spi";
+            label = "WS2812";
+    
+            /* SPI */
+            reg = <0>; /* ignored, but necessary for SPI bindings */
+            spi-max-frequency = <4000000>;
+    
+            /* WS2812 */
+            chain-length = <8>; /* LED strip length */
+            spi-one-frame = <0x70>;
+            spi-zero-frame = <0x40>;
+            color-mapping = <LED_COLOR_ID_GREEN
+			                 LED_COLOR_ID_RED LED_COLOR_ID_BLUE>;
+        };
+    };

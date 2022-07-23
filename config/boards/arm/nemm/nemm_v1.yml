@@ -1,13 +1,13 @@
 file_format: "1"
-id: mytom_v1
-name: Mytom Rev1 Board
+id: nemm_v1
+name: NEMM V1 Keyboard
 type: board
 arch: arm
 features:
   - keys
-  - display
-  - underglow
+  - RGB
+  - Display
 outputs:
   - usb
   - ble
-url: none
+url: 

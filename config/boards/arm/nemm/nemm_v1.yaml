@@ -1,6 +1,6 @@
-identifier: mytom_v1
-name: Mytom Rev1 Board
-type: mcu
+identifier: nemm_v1
+name: NEMM_V1
+type: keyboard
 arch: arm
 toolchain:
   - zephyr
@@ -10,6 +10,6 @@ supported:
   - adc
   - usb_device
   - ble
-  - RGB
   - ieee802154
+  - pwm
   - watchdog
