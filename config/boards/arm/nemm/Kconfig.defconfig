@@ -4,11 +4,8 @@
 if BOARD_NEMM_V1_LEFT
 
 	config ZMK_KEYBOARD_NAME
-	default "Nemm v1"
+	default "Nemm v1 "
 
-    config ZMK_SPLIT_ROLE_CENTRAL
-    default y
-	
 if ZMK_DISPLAY
      config SPI 
          default y
@@ -23,6 +20,10 @@ if ZMK_DISPLAY
          default 170
      config LVGL_BITS_PER_PIXEL
          default 24
+  choice LVGL_COLOR_DEPTH
+	default LVGL_COLOR_DEPTH_16
+  endchoice
+
 endif # ZMK_DISPLAY
 endif # BOARD_NEMM_V1_LEFT
 

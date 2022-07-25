@@ -10,6 +10,7 @@
         chosen {
             zmk,underglow = &led_strip;
             zmk,battery = &vbatt;
+            zephyr,display = &st7789v;
         };
     
         kscan0: kscan_0 {

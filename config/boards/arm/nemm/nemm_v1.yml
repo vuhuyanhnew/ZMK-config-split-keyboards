@@ -10,4 +10,5 @@ features:
 outputs:
   - usb
   - ble
-url: 
+url:
+  - https://github.com/kien242/ZMK-config-split-keyboards/tree/nemm
