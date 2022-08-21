@@ -10,14 +10,15 @@ manifest:
       url-base: https://github.com/Katona/
   projects:
     - name: zmk
-      #remote: zmkfirmware
-      #revision: main
+      remote: zmkfirmware
+      revision: main
 
       # remote: zmkfirmware-infused-kim
       # revision: my-changes/oled-ext-pwr
 
-      remote: zmkfirmware-split-battery-report
-      revision: split_battery_service
+      #remote: zmkfirmware-split-battery-report
+      #revision: split_battery_service
+      
       import: app/west.yml
   self:
     path: config
