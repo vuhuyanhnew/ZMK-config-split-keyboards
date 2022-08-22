@@ -16,5 +16,5 @@
 include:
   - board: nemm_v1_left
   - board: nemm_v1_right
-  - board: nice_nano_v2
+  - board: nemm_v1
     shield: settings_reset
