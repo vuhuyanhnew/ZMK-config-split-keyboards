@@ -16,5 +16,5 @@
 include:
   - board: nemm_v1_left
   - board: nemm_v1_right
-  - board: nrf52840dk_nrf52840
+  - board: nice_nano
     shield: settings_reset
