@@ -1,8 +1,6 @@
-/*
- * Copyright (c) 2022 kien242
- *
- * SPDX-License-Identifier: MIT
- */
+ # Copyright (c) 2022 kien242
+ #
+ # SPDX-License-Identifier: MIT
 
 if BOARD_NEMM_V1_LEFT
 

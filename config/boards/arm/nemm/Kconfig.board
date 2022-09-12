@@ -1,11 +1,7 @@
-
-
-/*
- * Nemm v1 board configuration
- * Copyright (c) 2022 kien242
- *
- * SPDX-License-Identifier: MIT
- */
+ # Nemm v1 board configuration
+ # Copyright (c) 2022 kien242
+ #
+ # SPDX-License-Identifier: MIT
 
 config BOARD_NEMM_V1_LEFT
 	bool "nemm_v1_left"
