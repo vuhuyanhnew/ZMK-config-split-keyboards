@@ -4,29 +4,3 @@ config BOARD_ENABLE_DCDC
 	default y
 	depends on (BOARD_NEMM_V1_LEFT || BOARD_NEMM_V1_RIGHT)
 	
-if ZMK_DISPLAY
-
-menuconfig WIDGET_LUNA_STATUS
-    bool "widget for displaying luna dog"
-    depends on !ZMK_SPLIT || ZMK_SPLIT_ROLE_CENTRAL
-    select LVGL_USE_IMG
-    select LVGL_USE_ANIMATION
-    select ZMK_WPM
-
-if WIDGET_LUNA_STATUS
-
-config ZMK_WIDGET_LUNA_WIDGET_WALK_WPM
-    int "Lower limit for WPM for luna to start walking"
-    default 10
-
-config ZMK_WIDGET_LUNA_WIDGET_RUN_WPM
-    int "Lower limit for WPM for luna to start running"
-    default 40
-
-config ZMK_WIDGET_LUNA_WIDGET_FRAME_DURATION
-    int "Luna animation frame duration"
-    default 200
-endif # ZAPHOD_BONGO_CAT
-
-
-endif
