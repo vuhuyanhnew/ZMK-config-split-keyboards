@@ -1,9 +1,8 @@
 /*
-*
-* Copyright (c) 2021 Darryl deHaan
-* SPDX-License-Identifier: MIT
-*
-*/
+ * Copyright (c) 2022 kien242
+ *
+ * SPDX-License-Identifier: MIT
+ */
 
 #pragma once
 

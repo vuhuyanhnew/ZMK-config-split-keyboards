@@ -7,6 +7,10 @@ if BOARD_NEMM_V1_LEFT
 	config ZMK_KEYBOARD_NAME
 	default "Nemm v1 "
 
+choice ZMK_DISPLAY_STATUS_SCREEN
+	default ZMK_DISPLAY_STATUS_SCREEN_CUSTOM
+endchoice
+
 if ZMK_DISPLAY
 
 config I2C
