@@ -17,9 +17,6 @@ config LVGL
 config LVGL_USE_LABEL
     default y
 
-config ZMK_DISPLAY_STATUS_SCREEN_CUSTOM
-    default y
-
 config SSD1306
 	default y
 
