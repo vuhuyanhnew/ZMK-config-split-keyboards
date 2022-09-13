@@ -43,7 +43,7 @@ lv_obj_t *zmk_display_status_screen() {
     lv_obj_t *screen;
 
     screen = lv_obj_create(NULL, NULL);
-    lv_disp_set_rotation(NULL, LV_DISP_ROT_180);
+    lv_disp_set_rotation(screen, LV_DISP_ROT_180);
 
 #if IS_ENABLED(CONFIG_ZMK_WIDGET_BATTERY_STATUS)
     zmk_widget_battery_status_init(&battery_status_widget, screen);
