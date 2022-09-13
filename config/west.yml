@@ -8,16 +8,21 @@ manifest:
       url-base: https://github.com/infused-kim
     - name: zmkfirmware-split-battery-report
       url-base: https://github.com/Katona/
+    - name: luna
+      url-base: https://github.com/pitchayath/
   projects:
     - name: zmk
-      remote: zmkfirmware
-      revision: main
+      #remote: zmkfirmware
+      #revision: main
 
       #remote: zmkfirmware-infused-kim
       #revision: my-changes/oled-ext-pwr
 
       #remote: zmkfirmware-split-battery-report
       #revision: split_battery_service
+
+      remote: luna
+      revision: luna
       
       import: app/west.yml
   self:
