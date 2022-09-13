@@ -82,4 +82,4 @@ lv_obj_t *zmk_display_status_screen() {
     lv_obj_align(zmk_widget_luna_status_obj(&luna_status_widget), NULL, LV_ALIGN_CENTER, 0, 0);
 #endif
     return screen;
-}2
+}
