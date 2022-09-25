@@ -1,5 +1,5 @@
 file_format: "1"
-id: nemm_v1
+id: noru64_v1
 name: NEMM V1 Keyboard
 type: board
 arch: arm
@@ -11,4 +11,4 @@ outputs:
   - usb
   - ble
 url:
-  - https://github.com/kien242/ZMK-config-split-keyboards/tree/nemm
+  - https://github.com/kien242/ZMK-config-split-keyboards/tree/noru64
