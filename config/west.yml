@@ -12,8 +12,8 @@ manifest:
       url-base: https://github.com/pitchayath/
   projects:
     - name: zmk
-      #remote: zmkfirmware
-      #revision: main
+      remote: zmkfirmware
+      revision: main
 
       #remote: zmkfirmware-infused-kim
       #revision: my-changes/oled-ext-pwr
@@ -21,8 +21,8 @@ manifest:
       #remote: zmkfirmware-split-battery-report
       #revision: split_battery_service
 
-      remote: luna
-      revision: luna
+      #remote: luna
+      #revision: luna
       
       import: app/west.yml
   self:
