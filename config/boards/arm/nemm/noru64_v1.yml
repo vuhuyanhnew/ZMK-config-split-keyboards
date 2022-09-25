@@ -1,12 +1,11 @@
 file_format: "1"
 id: noru64_v1
-name: NEMM V1 Keyboard
+name: Noru64 V1 Keyboard
 type: board
 arch: arm
 features:
   - keys
   - RGB
-  - Display
 outputs:
   - usb
   - ble
