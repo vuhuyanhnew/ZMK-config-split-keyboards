@@ -1,4 +1,4 @@
-#include "nemm.dtsi"
+#include "noru64.dtsi"
 
     / {
         chosen {

@@ -1,5 +1,5 @@
-identifier: nemm_v1
-name: NEMM_V1
+identifier: noru64_v1
+name: NORU64_V1
 type: keyboard
 arch: arm
 toolchain:

@@ -1,62 +1,26 @@
 # Copyright (c) 2020 Eric Lau
 # SPDX-License-Identifier: MIT
 
-if BOARD_NEMM_V1_LEFT
+if BOARD_NORU64_V1_LEFT
 
 	config ZMK_KEYBOARD_NAME
-	default "Nemm v1 "
+	default "Noru64 v1 "
 
-if ZMK_DISPLAY
+endif # BOARD_NORU64_V1_LEFT
 
-config I2C
-	default y
-	
-config LVGL
-    default y
 
-config LVGL_USE_LABEL
-    default y
-
-config SSD1306
-	default y
-
-config SSD1306_REVERSE_MODE
-	default y
-
-config LVGL_HOR_RES_MAX
-	default 128
-
-config LVGL_VER_RES_MAX
-	default 32
-
-config LVGL_VDB_SIZE
-	default 64
-
-config LVGL_DPI
-	default 148
-
-config LVGL_BITS_PER_PIXEL
-	default 1
-
-choice LVGL_COLOR_DEPTH
-	default LVGL_COLOR_DEPTH_1
-endchoice
-
-endif # ZMK_DISPLAY
-endif # BOARD_NEMM_V1_LEFT
-
-if BOARD_NEMM_V1_RIGHT
+if BOARD_NORU64_V1_RIGHT
 
 	config ZMK_KEYBOARD_NAME
-	default "Nemm v1 (right)"
+	default "Noru64 v1 (right)"
 
-endif # BOARD_NEMM_V1_RIGHT
+endif # BOARD_NORU64_V1_RIGHT
 
 
-if BOARD_NEMM_V1_LEFT || BOARD_NEMM_V1_RIGHT
+if BOARD_NORU64_V1_LEFT || BOARD_NORU64_V1_RIGHT
 
 config BOARD
-	default "nemm"
+	default "Noru64"
 
 config ZMK_SPLIT
 	default y
@@ -83,4 +47,4 @@ config USB_DEVICE_STACK
 
 endif # USB
 
-endif # BOARD_NEMM_V1_LEFT || BOARD_NEMM_V1_RIGHT
+endif # BOARD_NORU64_V1_LEFT || BOARD_NORU64_V1_RIGHT

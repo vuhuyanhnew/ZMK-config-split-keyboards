@@ -4,7 +4,7 @@
  * SPDX-License-Identifier: MIT
  */
 
-#include "nemm_v1.dts"
+#include "noru64_v1.dts"
 
 	/ {
 		chosen {

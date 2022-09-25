@@ -4,4 +4,4 @@
  * SPDX-License-Identifier: MIT
  */
 
-#include "nemm_v1.keymap"
+#include "noru64_v1.keymap"
