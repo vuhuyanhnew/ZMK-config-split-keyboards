@@ -9,6 +9,7 @@
     / {
         chosen {
             zmk,underglow = &led_strip;
+            zmk,backlight = &backlight;
             zmk,battery = &vbatt;
         };
     
@@ -37,20 +38,35 @@
         };
     
         ext-power {
-            compatible = "zmk,ext-power-generic";
-            label = "EXT_POWER";
-            control-gpios = <&gpio0 8 GPIO_ACTIVE_LOW>;   /*0.08*/
+             compatible = "zmk,ext-power-generic";
+             label = "EXT_POWER";
+             control-gpios = <&gpio0 8 GPIO_ACTIVE_LOW>;   /*0.08*/
         };
     
         vbatt: vbatt {
-            compatible = "zmk,battery-voltage-divider";
-            label = "VBATT";
-            io-channels = <&adc 2>;
-            output-ohms = <10000000>;
-		    full-ohms   = <(10000000 + 4000000)>;
+             compatible = "zmk,battery-voltage-divider";
+             label = "VBATT";
+             io-channels = <&adc 2>;
+             output-ohms = <10000000>;
+		     full-ohms   = <(10000000 + 4000000)>;
+        };
+
+        backlight: pwmleds {
+             compatible = "pwm-leds";
+             label = "Backlight LEDs";
+             pwm_led_0 {
+                 pwms = <&pwm0 11>;
+                 label = "Backlight LED 0";
         };
     };
     
+    &pwm0 {
+    status = "okay";
+    
+    ch0-pin = <11>;     
+    /* ch0-inverted; */ /* Enable when use a P-channel MOSFET */
+    };
+
     &spi1 {
         status = "okay";
     
