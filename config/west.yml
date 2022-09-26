@@ -12,8 +12,8 @@ manifest:
       url-base: https://github.com/pitchayath/
   projects:
     - name: zmk
-      remote: zmkfirmware
-      revision: main
+      #remote: zmkfirmware
+      #revision: main
 
       #remote: zmkfirmware-infused-kim
       #revision: my-changes/oled-ext-pwr
@@ -24,6 +24,9 @@ manifest:
       #remote: luna
       #revision: luna
       
+      remote: kien242
+      revision: main
+
       import: app/west.yml
   self:
     path: config
