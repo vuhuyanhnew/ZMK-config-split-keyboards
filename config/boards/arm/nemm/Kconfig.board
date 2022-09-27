@@ -1,6 +1,6 @@
 # SP56 board configuration
 
-# Copyright (c) 2020 Eric Lau
+# Copyright (c) 2022 kien242
 # SPDX-License-Identifier: MIT
 
 config BOARD_NEMM_V1_LEFT
