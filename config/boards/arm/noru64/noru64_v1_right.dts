@@ -42,7 +42,23 @@
 				, <&gpio0 15 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
 				;
 		};
-	
+
+		leds {
+		    compatible = "gpio-leds";
+		    red_led: led_0 {
+			    gpios = <&gpio1 13 GPIO_ACTIVE_HIGH>;
+			    label = "Red LED";
+		    };
+		    green_led: led_1 {
+			    gpios = <&gpio1 10 GPIO_ACTIVE_HIGH>;
+			    label = "Green LED";
+		    };
+		    blue_led: led_2 {
+			    gpios = <&gpio1 11 GPIO_ACTIVE_HIGH>;
+			    label = "Blue LED";
+		    };
+	    };
+
 		ext-power {
 			 compatible = "zmk,ext-power-generic";
 			 label = "EXT_POWER";
@@ -59,17 +75,17 @@
 		backlight: pwmleds {
              compatible = "pwm-leds";
              label = "Backlight LEDs";
-              pwm_led_0 {
+             pwm_led_0 {
                  pwms = <&pwm0 19>;
                  label = "Backlight LED 0";
-        };
+            };
 	};
 };
 	&pwm0 {
         status = "okay";
-    
+		
         ch0-pin = <19>;     
-        /* ch0-inverted; */ /* Enable when use a P-channel MOSFET */
+        //ch0-inverted;           // Enable when use a P-channel MOSFET.
     };
 
 	&spi1 {

@@ -37,6 +37,22 @@
                 ;
         };
     
+    	leds {
+		    compatible = "gpio-leds";
+		    blue_led: led_0 {
+			    gpios = <&gpio0 17 GPIO_ACTIVE_HIGH>;
+			    label = "Blue LED";
+		    };
+		    green_led: led_1 {
+			    gpios = <&gpio0 21 GPIO_ACTIVE_HIGH>;
+			    label = "Green LED";
+		    };
+		    red_led: led_2 {
+			    gpios = <&gpio0 23 GPIO_ACTIVE_HIGH>;
+			    label = "Red LED";
+		    };
+	    };
+
         ext-power {
              compatible = "zmk,ext-power-generic";
              label = "EXT_POWER";
